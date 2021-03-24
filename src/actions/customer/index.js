@@ -1,6 +1,7 @@
-
+import React from 'react';
 import {Link,Switch,Route } from "react-router-dom";
-import CutomerList from "../../components/lists/cutomerlist";
+import CutomerList from "components/lists/cutomerlist";
+
 
 import CustomerAdd from "./add";
 import CustomerEdit from "./edit";

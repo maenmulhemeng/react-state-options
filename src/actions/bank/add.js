@@ -1,5 +1,5 @@
-
-import AddBankFrom from '../../components/forms/add/AddBankFrom';
+import React from 'react';
+import AddBankFrom from 'components/forms/add/AddBankFrom';
 
 function BankAdd() {
     return (

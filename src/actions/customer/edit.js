@@ -1,5 +1,6 @@
 
-import EditCustomerForm from '../../components/forms/edit/EditCustomerForm';
+import React from 'react';
+import EditCustomerForm from 'components/forms/edit/EditCustomerForm';
 
 function CustomerEdit() {
     return (

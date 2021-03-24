@@ -21,10 +21,10 @@ function App() {
             <Link to="/">Home</Link>
           </li>
           <li>
-            <Link to="/actions/bank/">Bank</Link>
+            <Link to="/actions/bank">Bank</Link>
           </li>
           <li>
-            <Link to="/actions/customer/">Customer</Link>
+            <Link to="/actions/customer">Customer</Link>
           </li>
         </ul>
       </nav>

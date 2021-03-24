@@ -1,5 +1,5 @@
 
-
+import React from 'react';
 function EditBankForm() {
     return (
                 <form>

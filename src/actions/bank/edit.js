@@ -1,5 +1,5 @@
-
-import EditBankForm from '../../components/forms/edit/EditBankForm';
+import React from 'react';
+import EditBankForm from 'components/forms/edit/EditBankForm';
 
 function BankEdit() {
     return (
