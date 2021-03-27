@@ -5,9 +5,10 @@ import CutomerList from "components/lists/cutomerlist";
 
 import CustomerAdd from "./add";
 import CustomerEdit from "./edit";
+import Layout from 'components/layout';
 function Customer() {
   return (
-    <div>
+    <Layout>
         Customer
         <li>
             <Link to="/actions/customer/edit">Edit</Link>
@@ -24,7 +25,7 @@ function Customer() {
                     <CustomerEdit />
                 </Route>
             </Switch> 
-      </div>
+      </Layout>
   );
 }
 

@@ -1,35 +1,17 @@
-import React from 'react';
-import {Link ,Switch,Route, useRouteMatch} from "react-router-dom";
-import BankEdit from './edit';
-import BankAdd from './add';
-import BankList from "components/lists/banklist";
-function Bank() {
-  let match = useRouteMatch();
+import Layout from 'components/layout';
+import BankList from 'components/lists/banklist';
+import React  from 'react';
+import {Link} from "react-router-dom";
+
+function BankIndexPage(props) {
   console.log("init the bank page")
   return (
-    <div>
-       Bank 
-      
-       <li>
-            <Link to={`${match.url}/edit`}>Edit</Link>
-          </li>
-          <li>
-            <Link to={`${match.url}/add`}>Add</Link>
-          </li> 
-
-          <BankList/>
-          {match.url}
-          <Switch>
-                <Route path={`${match.url}/add`}>
-                    <BankAdd />
-                </Route>
-                <Route path={`${match.url}/edit`}>
-                    <BankEdit />
-                </Route>
-            </Switch>
-    </div>
+    <Layout title="Bank - index">
+        <Link className="btn btn-success mb-2" to="/actions/bank/add">Add Banks</Link>
+        <BankList banks={props.banks} deleteBank={props.deleteBank} />
+    </Layout>
      
   );
 }
 
-export default Bank;
+export default BankIndexPage;

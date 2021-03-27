@@ -3,7 +3,8 @@
       "baseUrl": "src",
       "paths": {
         "components/*": ["components/*"],
-        "actions/*": ["actions/*"]
+        "actions/*": ["actions/*"],
+        "reducers/*":["reducers/*"]
         
       }
     },
