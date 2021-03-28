@@ -5,22 +5,26 @@ import { useHistory } from "react-router-dom";
 import {Button} from 'reactstrap';
 
 const Layout = (props)=>{
-    let history = useHistory();
+    const history = useHistory();
+    
     return (
         <>
          <Header />
          
-         <Container>
-             <Row>
-                 <Col md={1}>
-                    <Button onClick={() => history.goBack()}>&larr;</Button>
-                 </Col>
-                 <Col>
-                <h2>{props.title}</h2>
-                </Col>
-            </Row>
-            {props.children}
-         </Container>
+            <Container>
+                <Row>
+                    <Col md={1}>
+                      <Button onClick={() => history.goBack()}>&larr;</Button>
+                    </Col>
+                    <Col>
+                    <h2>{props.title}</h2>
+                    </Col>
+                    <Col md={1}>
+                        <Button onClick={() => history.goForward()}>&rarr;</Button>
+                    </Col>
+                </Row>
+                {props.children}
+            </Container>
          
         </>
         

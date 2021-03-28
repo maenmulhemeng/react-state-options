@@ -5,7 +5,7 @@ import {Link, useRouteMatch} from "react-router-dom";
 import BankList from 'components/lists/banklist';
 import Layout from 'components/layout';
 
-function BankAddPage(props) {
+const BankAddPage = (props) => {
   const  match = useRouteMatch();
   return (
     <Layout title="Bank - Add">

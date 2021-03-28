@@ -1,14 +1,15 @@
 
 import React from 'react';
 import EditCustomerForm from 'components/forms/edit/EditCustomerForm';
+import Layout from 'components/layout';
 
-function CustomerEdit() {
+const CustomerEditPage = () => {
     return (
-      <div>
+      <Layout title="Customer - Edit">
          <EditCustomerForm />
-      </div>
+      </Layout>
     );
   }
   
-  export default CustomerEdit;
+  export default CustomerEditPage;
   

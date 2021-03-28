@@ -32,8 +32,7 @@ const Header = (props) =>{
                 <NavItem>
                     <NavLink href="/">Home</NavLink>
                 </NavItem>
-              
-               
+
                 <UncontrolledDropdown nav inNavbar>
                     <DropdownToggle nav caret>
                         Banks
@@ -53,9 +52,25 @@ const Header = (props) =>{
                                                
                     </DropdownMenu>
                     </UncontrolledDropdown>
-                    <NavItem>
-                        <NavLink href="/actions/cutomer">Customers</NavLink>
-                    </NavItem>
+                    <UncontrolledDropdown nav inNavbar>
+                    <DropdownToggle nav caret>
+                        Customers
+                    </DropdownToggle>
+                    <DropdownMenu>
+                        <DropdownItem>
+                            <Link to="/actions/customer" >
+                                Index
+                            </Link>
+                        </DropdownItem>
+                      
+                        <DropdownItem>
+                            <Link  to="/actions/customer/add" >
+                            Add
+                            </Link>
+                        </DropdownItem>
+                                               
+                    </DropdownMenu>
+                    </UncontrolledDropdown>
             </Nav>
             <NavbarText>Demo by Maen Mulhem</NavbarText>
             </Collapse>

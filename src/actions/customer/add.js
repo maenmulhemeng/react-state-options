@@ -1,13 +1,14 @@
 import React from 'react';
 import AddCustomerFrom from 'components/forms/add/AddCustomerForm';
+import Layout from 'components/layout';
 
-function CustomerAdd() {
+const CustomerAddPage = () => {
     return (
-      <div>
+      <Layout title="Customer - Add">
             <AddCustomerFrom />
-      </div>
+      </Layout>
     );
   }
   
-  export default CustomerAdd;
+  export default CustomerAddPage;
   

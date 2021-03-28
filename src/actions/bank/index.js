@@ -3,7 +3,7 @@ import BankList from 'components/lists/banklist';
 import React  from 'react';
 import {Link} from "react-router-dom";
 
-function BankIndexPage(props) {
+const BankIndexPage = (props) => {
   console.log("init the bank page")
   return (
     <Layout title="Bank - index">

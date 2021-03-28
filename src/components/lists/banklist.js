@@ -3,7 +3,7 @@ import React from 'react';
 import {Link} from "react-router-dom";
 import {Button, Row, Col, ListGroup, ListGroupItem, ListGroupItemHeading, ListGroupItemText} from 'reactstrap';
 
-function BankList(props) {
+const BankList = (props) => {
     
     const deleteBank = (bank) => {
       props.deleteBank(bank)
@@ -16,18 +16,16 @@ function BankList(props) {
           <ListGroupItem key={index}>
           <ListGroupItemHeading>{item.title}</ListGroupItemHeading>
           <ListGroupItemText>
+          {item.address}
+          </ListGroupItemText>
           <Row>
-              <Col md={8}>
-              {item.address}
-              </Col>
               <Col>
               <Link className="btn btn-sm btn-primary" to={ {pathname:"/actions/bank/edit", state: item } }>Edit</Link> {' '}
               </Col>
               <Col>
               <Button className="btn btn-sm btn-danger" onClick={()=>deleteBank(item)}>Delete</Button>
               </Col>
-            </Row>
-          </ListGroupItemText>
+          </Row>
         </ListGroupItem>
         
         ))}

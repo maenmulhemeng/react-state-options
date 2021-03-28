@@ -4,7 +4,7 @@ import { AvForm, AvField} from 'availity-reactstrap-validation-safe';
 import {Row, Col, Button} from 'reactstrap';
 
 
-function AddBankFrom(props) {
+const  AddBankFrom = (props) => {
     const formEl = useRef(null)
 
     const [bank, setBank] = useState({})

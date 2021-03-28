@@ -1,6 +1,6 @@
 
 import React from 'react';
-function CutomerList() {
+const CutomerList = () => {
     return (
                 <ul>
                 <li>customer 1</li>

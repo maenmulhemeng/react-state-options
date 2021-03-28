@@ -3,7 +3,10 @@ import './App.css';
 import BankIndexPage from './actions/bank';
 import BankEditPage from './actions/bank/edit';
 import BankAddPage from './actions/bank/add';
-import Customer from './actions/customer';
+import CustomerPage from './actions/customer';
+import CustomerAddPage from './actions/customer/add';
+import CustomerEditPage from './actions/customer/edit';
+
 import homePage from './actions/home';
 
 import bankReducer ,{bankActions} from 'reducers/bankReducer';
@@ -15,9 +18,9 @@ import {
   Link
 } from "react-router-dom";
 import { useReducer,useState } from 'react';
-import Layout from 'components/layout';
 
-function App() {
+
+const App = () => {
   const [banks, dispatch] = useReducer(bankReducer, []);
   
   const addBank = (bank) =>{
@@ -46,20 +49,24 @@ function App() {
             {/* A <Switch> looks through its children <Route>s and
                 renders the first one that matches the current URL. */}
             <Switch> 
-            <Route exact path="/" component={homePage}></Route>
-            <Route path="/actions/bank/edit">
-                  <BankEditPage updateBank={updateBank} />
-              </Route> 
-            <Route path="/actions/bank/add">
-                <BankAddPage banks={banks} addBank={addBank}  deleteBank={deleteBank} resetBanks={resetBanks}/>
+              <Route exact path="/" component={homePage}></Route>
+              <Route path="/actions/bank/edit">
+                    <BankEditPage updateBank={updateBank} />
+                </Route> 
+              <Route path="/actions/bank/add">
+                  <BankAddPage banks={banks} addBank={addBank}  deleteBank={deleteBank} resetBanks={resetBanks}/>
               </Route>
               <Route path="/actions/bank" banks={banks}>
                   <BankIndexPage banks={banks} deleteBank={deleteBank} resetBanks={resetBanks}/>
-                </Route> 
-              
-              
+              </Route> 
+              <Route path="/actions/customer/add">
+                  <CustomerAddPage />
+              </Route>  
+              <Route path="/actions/customer/adit">
+                  <CustomerEditPage />
+              </Route>  
               <Route path="/actions/customer">
-                  <Customer />
+                  <CustomerPage />
               </Route>   
             </Switch>
           </div>

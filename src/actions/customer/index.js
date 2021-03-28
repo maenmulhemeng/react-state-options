@@ -1,32 +1,12 @@
 import React from 'react';
-import {Link,Switch,Route } from "react-router-dom";
-import CutomerList from "components/lists/cutomerlist";
 
-
-import CustomerAdd from "./add";
-import CustomerEdit from "./edit";
 import Layout from 'components/layout';
-function Customer() {
+const  CustomerPage = () => {
   return (
-    <Layout>
-        Customer
-        <li>
-            <Link to="/actions/customer/edit">Edit</Link>
-          </li>
-          <li>
-            <Link to="/actions/customer/add">Add</Link>
-          </li>
-          <CutomerList/>
-          <Switch>
-                <Route path="/actions/customer/add">
-                    <CustomerAdd />
-                </Route>
-                <Route path="/actions/customer/edit">
-                    <CustomerEdit />
-                </Route>
-            </Switch> 
-      </Layout>
+    <Layout title="Customer - index">
+      <h1>This form is built for the sake of demo and need to be done later</h1>
+    </Layout>
   );
 }
 
-export default Customer;
+export default CustomerPage;

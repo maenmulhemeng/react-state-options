@@ -2,7 +2,8 @@ import React, { useState } from 'react';
 import EditBankForm from 'components/forms/edit/EditBankForm';
 import {useLocation} from "react-router-dom";
 import Layout from 'components/layout';
-function BankEditPage(props) {
+
+const BankEditPage = (props) => {
     const {state}= useLocation();
     
     const [bank, setBank] = useState(state)

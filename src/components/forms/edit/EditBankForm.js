@@ -3,7 +3,7 @@ import React, { useRef, useState }  from 'react';
 import { AvForm, AvField} from 'availity-reactstrap-validation-safe';
 import {Row, Col, Button} from 'reactstrap';
 
-function EditBankForm(props) {
+const EditBankForm = (props) =>{
     const formEl = useRef(null)
 
    
