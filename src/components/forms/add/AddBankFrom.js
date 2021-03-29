@@ -2,15 +2,16 @@
 import React, { useRef, useState } from 'react';
 import { AvForm, AvField} from 'availity-reactstrap-validation-safe';
 import {Row, Col, Button} from 'reactstrap';
-
+import { useBankCtx } from 'contexts/BankCtx';
 
 const  AddBankFrom = (props) => {
+    const {banks,dispatch,bankActions} = useBankCtx();
     const formEl = useRef(null)
 
     const [bank, setBank] = useState({})
 
     const submitForm = (e) =>{
-        props.addBank(bank);
+        dispatch({type:bankActions.add,payload:bank});
         formEl.current.reset();
     }
     const inputChanges = (e)=>{

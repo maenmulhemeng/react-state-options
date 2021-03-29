@@ -1,17 +1,25 @@
 
-import React, { useRef, useState }  from 'react';
+import React, {  useRef, useState }  from 'react';
 import { AvForm, AvField} from 'availity-reactstrap-validation-safe';
 import {Row, Col, Button} from 'reactstrap';
+import { useBankCtx } from 'contexts/BankCtx';
 
 const EditBankForm = (props) =>{
-    const formEl = useRef(null)
-
-   
-    const submitForm = (e) =>{
-        //console.log(e)
-        props.updateBank(props.bank);
+    const formEl = useRef(null);
+    const {banks,dispatch,bankActions} = useBankCtx();
+    const [bank, setBank] = useState(banks[props.id]?banks[props.id]:{});
+    
+    if (!props.id || !banks[props.id]){ 
+        return <p>correct id must be passed</p>;
     }
-  
+
+    const submitForm = (e) =>{
+        dispatch({type:bankActions.update, payload:bank})
+    }
+    
+    const inputChanges = (e) =>{
+        setBank({...bank, [e.target.name]:e.target.value})
+    }
     return (
         <AvForm onValidSubmit={submitForm} ref={formEl} className="p-2">
             <Row>
@@ -21,8 +29,8 @@ const EditBankForm = (props) =>{
                             name="title"
                             label="Title"
                             id="title" 
-                            value={props.bank.title}  
-                            onChange={props.inputChanges}
+                            value={bank.title}  
+                            onChange={inputChanges}
                             helpMessage="Please enter the name"     
                             errorMessage="" 
                             validate={{ required:{ value:true, errorMessage:"it is required"} ,
@@ -36,8 +44,8 @@ const EditBankForm = (props) =>{
                             name="address"
                             label="address"
                             id="address" 
-                            value={props.bank.address}  
-                            onChange={props.inputChanges}
+                            value={bank.address}  
+                            onChange={inputChanges}
                             helpMessage="Please enter the address"     
                             errorMessage="" 
                             validate={{ required:{ value:true, errorMessage:"it is required"} ,

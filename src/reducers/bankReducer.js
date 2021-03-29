@@ -5,8 +5,12 @@ export default (state=[], action) => {
     switch (action.type) {
       
       case bankActions.add:{
-        action.payload.id =currentId++; 
-        return [...state, action.payload];
+        if (state.filter(e => e.title == action.payload.title).length <= 0){
+          action.payload.id =currentId++; 
+          return [...state, action.payload];
+        }else{
+          return state;
+        }
       }
       case bankActions.update:
           return state.map( i=> i.id == action.payload.id? action.payload : i)

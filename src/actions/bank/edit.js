@@ -1,23 +1,15 @@
-import React, { useState } from 'react';
+import React, { useContext } from 'react';
 import EditBankForm from 'components/forms/edit/EditBankForm';
-import {useLocation} from "react-router-dom";
+
 import Layout from 'components/layout';
+import { useParams } from 'react-router';
+
 
 const BankEditPage = (props) => {
-    const {state}= useLocation();
-    
-    const [bank, setBank] = useState(state)
-    
-    const inputChanges = (e)=>{
-      //console.log(e);
-      setBank({...bank, [e.target.name]:e.target.value})
-    }
+    let { id } = useParams();
     return (
       <Layout title="Bank - Edit">
-         <div>
-           Preview: {bank.title} in {bank.address}
-          </div>
-         <EditBankForm updateBank={props.updateBank}  inputChanges={inputChanges} bank={bank} />
+         <EditBankForm id={id}/>
       </Layout>
     );
   }
