@@ -5,11 +5,12 @@ console.log("create context")
 export const BankCtx = createContext();
 
 export const BankCtxTag = ({ children })=>{
-    console.log("refresh context")
+    console.log("refresh context - and remeber to use the last result using useMemo")
     const [banks, dispatch] = useReducer(bankReducer, []);
     
 
     const contextValue = useMemo(() => {
+            console.log("Results will be remmebered");
             return {banks,dispatch,bankActions};
     }, [banks,dispatch,bankActions]);
 

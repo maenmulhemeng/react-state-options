@@ -15,7 +15,7 @@ import {
 import {BankCtxTag} from 'contexts/BankCtx';
 
 const App = () => {
-  
+  console.log("re-render App")
   return (
   <BankCtxTag>
     <Router>

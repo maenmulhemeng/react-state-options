@@ -6,7 +6,7 @@ import {
     NavbarBrand,
     Nav,
 
-    NavLink,
+    
     NavItem,
     UncontrolledDropdown,
     DropdownToggle,
@@ -15,7 +15,7 @@ import {
     NavbarText
   } from 'reactstrap';
 
-import {Link} from 'react-router-dom';
+import {Link,NavLink} from 'react-router-dom';
 
 const Header = (props) =>{
     const [isOpen, setIsOpen] = useState(false);
@@ -30,7 +30,7 @@ const Header = (props) =>{
             <Collapse isOpen={isOpen} navbar>
             <Nav className="mr-auto" navbar>
                 <NavItem>
-                    <NavLink href="/">Home</NavLink>
+                    <NavLink to="/" className="nav-link">Home</NavLink>
                 </NavItem>
 
                 <UncontrolledDropdown nav inNavbar>
