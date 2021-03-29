@@ -1,6 +1,5 @@
-import {createContext, useContext,useReducer} from 'react';
+import {createContext, useContext,useReducer,useMemo} from 'react';
 import bankReducer ,{bankActions}from 'reducers/bankReducer';
-
 
 
 export const BankCtx = createContext();
@@ -8,8 +7,13 @@ export const BankCtx = createContext();
 export const BankCtxTag = ({ children })=>{
     
     const [banks, dispatch] = useReducer(bankReducer, []);
+    
 
-    return(<BankCtx.Provider value={{banks,dispatch,bankActions}}>
+    const contextValue = useMemo(() => {
+            return {banks,dispatch,bankActions};
+    }, [banks,dispatch,bankActions]);
+
+    return(<BankCtx.Provider value={contextValue}>
         {children}
         </BankCtx.Provider>)
 
