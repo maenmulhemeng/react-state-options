@@ -5,6 +5,7 @@ import {Row, Col, Button} from 'reactstrap';
 import { useBankCtx } from 'contexts/BankCtx';
 
 const  AddBankFrom = (props) => {
+    console.log("Re-render AddBankFrom");
     const {banks,dispatch,bankActions} = useBankCtx();
     const formEl = useRef(null)
 

@@ -4,6 +4,7 @@ import {Button, Row, Col, ListGroup, ListGroupItem, ListGroupItemHeading, ListGr
 import { useBankCtx } from 'contexts/BankCtx';
 
 const BankList = (props) => {
+  console.log("Re-render BankList")
   const {banks,dispatch,bankActions} = useBankCtx();
   const deleteBank = (bank) => {
     dispatch({type:bankActions.delete,payload:bank})
