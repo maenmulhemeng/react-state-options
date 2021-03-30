@@ -12,12 +12,14 @@ import {
   Switch,
   Route
 } from "react-router-dom";
-import {BankCtxTag} from 'contexts/BankCtx';
-
+import { Provider } from 'react-redux';
+import {useStore} from './redux/store';
 const App = () => {
-  console.log("re-render App")
+  console.log("re-render App");
+  const store = useStore();
+  
   return (
-  <BankCtxTag>
+  <Provider store={store}>
     <Router>
           
     {/* A <Switch> looks through its children <Route>s and
@@ -44,8 +46,8 @@ const App = () => {
       </Route>
       </Switch>
     </Router>
-  </BankCtxTag>
-
+  
+    </Provider>
   );
 }
 

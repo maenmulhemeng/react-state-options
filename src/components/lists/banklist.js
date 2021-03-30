@@ -1,11 +1,14 @@
 import React from 'react';
 import {Link} from "react-router-dom";
 import {Button, Row, Col, ListGroup, ListGroupItem, ListGroupItemHeading, ListGroupItemText} from 'reactstrap';
-import { useBankCtx } from 'contexts/BankCtx';
-
+//import { useBankCtx } from 'contexts/BankCtx';
+import { useDispatch, useSelector } from 'react-redux';
+import {bankActions} from 'redux/reducers/bankReducer';
 const BankList = (props) => {
   console.log("Re-render BankList")
-  const {banks,dispatch,bankActions} = useBankCtx();
+  const banks = useSelector((state) => {return state.bankReducer})
+
+  const dispatch = useDispatch()
   const deleteBank = (bank) => {
     dispatch({type:bankActions.delete,payload:bank})
   }

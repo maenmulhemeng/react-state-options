@@ -5,7 +5,8 @@
         "components/*": ["components/*"],
         "actions/*": ["actions/*"],
         "reducers/*":["reducers/*"],
-        "contexts/*":["contexts/*"]
+        "contexts/*":["contexts/*"],
+        "redux/*": ["redux/*"]
         
       }
     },

@@ -25,7 +25,7 @@ const Header = (props) =>{
     return(
         <Navbar color="light" light expand="md">
             
-            <NavbarBrand href="/">useReducers with useContext</NavbarBrand>
+            <NavbarBrand href="/">Redux solution</NavbarBrand>
             <NavbarToggler onClick={toggle} />
             <Collapse isOpen={isOpen} navbar>
             <Nav className="mr-auto" navbar>

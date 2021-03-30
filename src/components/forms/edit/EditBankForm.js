@@ -2,14 +2,19 @@
 import React, {  useRef, useState }  from 'react';
 import { AvForm, AvField} from 'availity-reactstrap-validation-safe';
 import {Row, Col, Button} from 'reactstrap';
-import { useBankCtx } from 'contexts/BankCtx';
+//import { useBankCtx } from 'contexts/BankCtx';
+import { useDispatch, useSelector } from 'react-redux';
+import {bankActions} from 'redux/reducers/bankReducer';
 
 const EditBankForm = (props) =>{
     const formEl = useRef(null);
-    const {banks,dispatch,bankActions} = useBankCtx();
-    const [bank, setBank] = useState(banks[props.id]?banks[props.id]:{});
+    const banks = useSelector((state) => {return state.bankReducer})
+   
+    const dispatch = useDispatch();
+    const b = banks.find(b => b.id == props.id );
+    const [bank, setBank] = useState(b ? b:{});
     
-    if (!props.id || !banks[props.id]){ 
+    if (!props.id || !b){ 
         return <p>correct id must be passed</p>;
     }
 

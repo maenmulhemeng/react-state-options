@@ -1,7 +1,7 @@
 console.log("init bank reducer")
 export const initialBank =  {id:"", title:"", address:""}
 let currentId = 0;
-export default (state=[], action) => {
+const bankReducer = (state=[], action) => {
     switch (action.type) {
       
       case bankActions.add:{
@@ -29,7 +29,8 @@ export default (state=[], action) => {
       case bankActions.reset: return []
       
       default:
-        throw new Error();
+       // console.log(action);
+        return state;
     }
 }
 
@@ -39,3 +40,5 @@ export const bankActions = {
   delete:'delete',
   reset:'reset'
 }
+
+export default bankReducer;

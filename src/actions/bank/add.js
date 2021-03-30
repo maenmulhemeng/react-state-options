@@ -4,11 +4,15 @@ import {Row, Col, Button} from 'reactstrap';
 
 import BankList from 'components/lists/banklist';
 import Layout from 'components/layout';
-import { useBankCtx } from 'contexts/BankCtx';
-
+import { useDispatch, useSelector } from 'react-redux';
+//import { useBankCtx } from 'contexts/BankCtx';
+import {bankActions} from 'redux/reducers/bankReducer';
 const BankAddPage = (props) => {
   console.log("Re-render BankAddPage");
-  const {banks,dispatch,bankActions} = useBankCtx();
+  const banks = useSelector((state) => {return state.bankReducer})
+  
+  const dispatch = useDispatch()
+
   return (
     <Layout title="Bank - Add">
       <Row>

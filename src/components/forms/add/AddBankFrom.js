@@ -2,13 +2,17 @@
 import React, { useRef, useState } from 'react';
 import { AvForm, AvField} from 'availity-reactstrap-validation-safe';
 import {Row, Col, Button} from 'reactstrap';
-import { useBankCtx } from 'contexts/BankCtx';
+//import { useBankCtx } from 'contexts/BankCtx';
+import { useDispatch, useSelector } from 'react-redux';
+import {bankActions} from 'redux/reducers/bankReducer';
 
 const  AddBankFrom = (props) => {
     console.log("Re-render AddBankFrom");
-    const {banks,dispatch,bankActions} = useBankCtx();
+    const banks = useSelector((state) => {return state.bankReducer})
+    
+    const dispatch = useDispatch()
     const formEl = useRef(null)
-
+    console.log(banks)
     const [bank, setBank] = useState({})
 
     const submitForm = (e) =>{
