@@ -1,7 +1,8 @@
 # react-state-options
 This project shows different kind of options to handle the state in React  
 The first option is - useReducer with Props which shows the propblem of props drilling  
-The second option is - useReducer with Context API which shows the problem of refreshing all iincluded components  
+The second option is - useReducer with Context API which shows the problem of refreshing all included components (go to branch withContext)  
+The third optioin is - redux (go to branch redux)  
 
 
 # Getting Started with Create React App
